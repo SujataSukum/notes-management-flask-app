@@ -175,8 +175,8 @@ async function loadNotes() {
 
                 <div class="flex gap-2">
 
-                    <button onclick="pinNote('${key}')"
-                        class="bg-gray-300 px-2 rounded">📌</button>
+                    <button onclick="editNote('${key}', '${data[key].content}')"
+                        class="bg-yellow-400 px-2 rounded">✏️</button>
 
                     <button onclick="deleteNote('${key}')"
                         class="bg-red-500 px-2 rounded">🗑️</button>
@@ -195,6 +195,7 @@ function editNote(title, content) {
     document.getElementById("content").value = content;
 
     currentEdit = title;
+
     document.getElementById("mainBtn").innerText = "Update Note";
 }
 
